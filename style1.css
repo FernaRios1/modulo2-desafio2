@@ -1,0 +1,231 @@
+
+@font-face {
+    font-family: 'avenir';
+    src: url('./26301410506.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+.allura-regular {
+    font-family: "Allura", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+/* General */
+body {
+    margin: 0;
+    font-family: 'avenir', sans-serif;
+    background:  #f9f7fb;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Layout con Grid */
+.layout {
+    display: grid;
+    grid-template-areas:
+        "menu menu"
+        "sidebar products"
+        "footer footer";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 300px 1fr;
+    height: 100vh;
+    gap: 1rem;
+}
+
+
+/* Estilos para el menú */
+.menu {
+    grid-area: menu;
+    color: #333;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    padding: 2rem 1rem;
+    background-color:#cac0cf;
+    padding-bottom: 8px;
+}
+
+.menu img {
+    max-width: 150px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    margin-bottom: 1rem; /* Espacio entre la imagen y el título */
+}
+
+.menu h1 {
+    font-size: 2rem; /* Tamaño del título */
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.menu h3 {
+    font-size: 1.5rem; /* Tamaño del subtítulo */
+    margin: 0.5rem 0 0;
+    font-family: allura;
+    color: #2D2D2D; /* Color ligeramente más suave */
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.menu li {
+    margin: 0 1rem;
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para la barra lateral */
+.sidebar {
+    grid-area: sidebar;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Flexbox */
+    gap: 1rem;
+    width: 250px;
+}
+
+.sidebar h2 {
+    font-size: 1.2rem;
+    color: #7e7385;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.sidebar li span {
+    font-weight: bold;
+    color: #7e7385;
+}
+
+.sidebar a{
+    text-decoration: none;
+    color: #333;
+}
+
+/* Grilla de productos */
+
+.products {
+    grid-area: products;
+    display: flex;
+    flex-direction: column; /* Apila las categorías */
+    gap: 2rem; /* Espacio entre las categorías */
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de categoría */
+.category-section {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd; /* Línea divisoria */
+}
+
+.category-section h2 {
+    font-size: 1.5rem;
+    color: #7e7385;
+    margin-bottom: 1rem;
+}
+
+.product-grid {
+    display: grid; /* Grilla para los productos */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adaptativa */
+    gap: 1rem; /* Espacio entre productos */
+}
+
+
+/* Tarjetas de productos */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    max-width: 200px;
+    font-size: 0.9rem;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.product-card button {
+    background: #7e7385;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.product-card button:hover {
+    background: #4d0073;
+}
+
+/* Estilos para el pie de página */
+.footer {
+    grid-area: footer;
+    background: #cac0cf;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
